@@ -1,2 +1,2 @@
 # Brainwave_Matrix_Intern
-INTERNSHIP TASK REPOSITORY
+Welcome to theWeb Development Repository! This repository contains all the tasks and projects completed during my Web Development at BrainWave Matrix.
