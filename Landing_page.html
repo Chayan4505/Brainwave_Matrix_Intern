@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaSpace - Launch Your Online Presence</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right bottom, #e0f2fe, #bae6fd);
+      color: #1e3a8a;
+      line-height: 1.6;
+      padding: 1rem;
+    }
+    header, footer {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      color: #0f172a;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      color: #334155;
+      margin-bottom: 1.5rem;
+    }
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+    .btn-primary {
+      background-color: #2563eb;
+      color: white;
+    }
+    .btn-outline {
+      background-color: white;
+      color: #2563eb;
+      border: 2px solid #2563eb;
+    }
+    .newsletter {
+      max-width: 500px;
+      margin: 2rem auto;
+      text-align: center;
+    }
+    .newsletter input {
+      padding: 0.75rem;
+      width: 70%;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      margin-right: 0.5rem;
+      font-size: 1rem;
+    }
+    .newsletter button {
+      padding: 0.75rem 1rem;
+      background-color: #1d4ed8;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 3rem auto;
+    }
+    .feature {
+      background: white;
+      padding: 2rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .feature h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.4rem;
+      color: #0f172a;
+    }
+    .feature p {
+      color: #475569;
+      font-size: 1rem;
+    }
+    .about {
+      max-width: 900px;
+      margin: 4rem auto;
+      background: white;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+    .about h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #1e293b;
+    }
+    .about p {
+      color: #475569;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #64748b;
+    }
+    #message {
+      margin-top: 0.5rem;
+      font-weight: 500;
+    }
+    @media(min-width: 768px) {
+      h1 {
+        font-size: 3.5rem;
+      }
+      .features {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to NovaSpace 🚀</h1>
+    <div class="hero">
+      <p>Your all-in-one platform for launching, managing, and growing your online presence.</p>
+    </div>
+    <div class="buttons">
+      <button class="btn btn-primary">Get Started</button>
+      <button class="btn btn-outline">Learn More</button>
+    </div>
+  </header>
+
+  <section class="newsletter">
+    <h2>Join our newsletter</h2>
+    <form onsubmit="subscribe(event)">
+      <input type="email" id="email" placeholder="Enter your email" required />
+      <button type="submit">Subscribe</button>
+    </form>
+    <p id="message"></p>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <h3>🚀 Launch Projects</h3>
+      <p>Discover tools to help you launch projects with ease and precision. Everything you need in one place.</p>
+    </div>
+    <div class="feature">
+      <h3>📢 Boost Visibility</h3>
+      <p>Use powerful marketing integrations to increase your reach and attract more users effortlessly.</p>
+    </div>
+    <div class="feature">
+      <h3>📊 Track Analytics</h3>
+      <p>Monitor your website's performance with real-time analytics and smart dashboards.</p>
+    </div>
+  </section>
+
+  <section class="about">
+    <h2>About NovaSpace</h2>
+    <p>
+      NovaSpace was founded with the mission to make launching online platforms accessible and enjoyable for everyone — whether you're a startup founder, freelancer, or creator.
+      Our tools are built to be simple yet powerful, enabling users to build, scale, and measure their digital growth all from one central hub.
+    </p>
+    <br>
+    <p>
+      With a focus on performance, security, and ease of use, NovaSpace is committed to helping you navigate the digital universe. Our global team works round the clock to ensure
+      our platform is always improving to meet your needs.
+    </p>
+  </section>
+
+  <footer>
+    &copy; <span id="year"></span> NovaSpace. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function subscribe(event) {
+      event.preventDefault();
+      const email = document.getElementById('email').value;
+      const messageEl = document.getElementById('message');
+
+      if (!email || !email.includes('@')) {
+        messageEl.textContent = 'Please enter a valid email address.';
+        messageEl.style.color = '#dc2626';
+        return;
+      }
+
+      messageEl.textContent = `Thanks for subscribing, ${email}!`;
+      messageEl.style.color = '#16a34a';
+      document.getElementById('email').value = '';
+    }
+  </script>
+</body>
+</html>
